@@ -6,10 +6,10 @@ import objLoader from './loaders/obj';
 
 if ('customElements' in window) {
 
-  if (!('THREE' in window)) {
-    throw 'THREE (threejs.org) is required.';
+  if (typeof THREE === 'undefined') {
+    throw new Error('Component attempted to register before THREE JS was available.')
   }
-
+  
   if ('GLTFLoader' in THREE) {
     modelLoader.register('.gltf', gltfLoader);
     modelLoader.register('.glb', gltfLoader);
