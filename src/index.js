@@ -1,3 +1,4 @@
+import * as THREE from 'three';
 import HTMLModelElement from './modelElement.js';
 import modelLoader from './modelLoader.js';
 import gltfLoader from './loaders/gltf';
